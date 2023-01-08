@@ -69,7 +69,7 @@ public class Shopping {
 	@FindBy(xpath="//span[text()='My Cart']")
 	public static WebElement Mycart;
 
-	@FindBy(xpath="//strong[text()='Order Total']//following::span[1]")
+	@FindBy(xpath="//*[@id=\"cart-totals\"]/div/table/tbody/tr[3]/td/strong/span")
 	public static WebElement getText;
 
 	//proceesed to checkout:
@@ -108,15 +108,15 @@ public class Shopping {
 	public static WebElement state;
 
 	//postalcode
-	@FindBy(name = "postcode")
-	public static WebElement postalcode;
+	@FindBy(xpath = "//input[@name='postcode']")
+	public static WebElement post;
 
 	//country
 	@FindBy(xpath ="//input[@class='input-text']/following::select[2]")
 	public static WebElement country;
 
 	//phonenumber
-	@FindBy(name="telephone")
+	@FindBy(xpath="//input[@name='telephone']")
 	public static WebElement phonenumber;
 
 	// radi0 button selct fixed
@@ -124,7 +124,12 @@ public class Shopping {
 	public static WebElement radio;
 
 	// next button
-	@FindBy(xpath = "//span[text()='Next']")
+	@FindBy(xpath = "//*[@name='city']/following::button[1]")
 	public static WebElement button;
+	
+	@FindBy(xpath="//*[@id=\"opc-sidebar\"]/div[1]/table/tbody/tr[3]/td/strong/span")
+	public static WebElement GrandTotal;
 
+	@FindBy(xpath="//*[@id=\"checkout-payment-method-load\"]/div/div/div[2]/div[2]/div[4]/div/button/span")
+	public static WebElement PlaceOrder;
 }
