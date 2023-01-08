@@ -49,6 +49,9 @@ public class Utills {
 	Constants.address1=property.getProperty("address1");
 	Constants.address2=property.getProperty("address2");
 	Constants.city=property.getProperty("city");
+	Constants.high=property.getProperty("high");
+	
+	
 }
 	
 	public void initiWebElements() {

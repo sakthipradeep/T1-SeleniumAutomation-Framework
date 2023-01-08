@@ -70,8 +70,16 @@ public class Shop {
 		
 		System.out.println("product 3 added to cart");
 		////////////////////////////////////////////////
+		String total = Shopping.getText.getText();
+		System.out.println(total);
+		String high=new String(Constants.high);
+		if(total.equals(high)) {
 		Shopping.proceesedtocheckout.click();
-
+		System.out.println("amount is suitable");
+		}
+		else {
+			System.out.println("amount is high");
+		}
 		//Shopping.checkcarttotal.click();
 		/*
 		 * DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.
@@ -85,16 +93,20 @@ public class Shop {
 		Shopping.street0.sendKeys(Constants.address1);
 		Shopping.street1.sendKeys(Constants.address2);
 		Shopping.city.sendKeys(Constants.city);
-		
 		Select state=new Select(Shopping.state);
 		state.selectByIndex(15);
+		//DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-		Select ss=new Select(Shopping.country);
-		ss.selectByIndex(15);
+		Shopping.post.sendKeys("6456896");
+		// Select ss=new Select(Shopping.country);
+			//ss.selectByIndex(15);
+		Shopping.phonenumber.sendKeys("662486259996");
 
-		Shopping.postalcode.sendKeys(Constants.postalcode);
+		
+       
 
-		Shopping.phonenumber.sendKeys(Constants.phonenumber);
+		
+
 		
 		Shopping.radio.click();
 
@@ -116,6 +128,11 @@ public class Shop {
 	@When("Click next")
 	public void click_next() {
 		Shopping.button.click();
+		String GrandTotals = Shopping.GrandTotal.getText();
+		System.out.println("grandtoatal include shipping charge :"+GrandTotals);
+		DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
+		Shopping.PlaceOrder.click();
 	}
 
 }
