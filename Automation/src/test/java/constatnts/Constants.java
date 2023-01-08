@@ -33,5 +33,5 @@ public class Constants {
 	public static String postalcode;
 	public static String state;
 	public static String country;
-
+	public static String high;
 }
